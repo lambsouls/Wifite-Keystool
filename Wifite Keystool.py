@@ -53,7 +53,7 @@ while a1>0:
     print(end='—')
     a1-=1
 print("")
-print("* Wifite Keystool v1.00 *")
+print("* Wifite Keystool v1.01 *")
 a2=13
 while a2>0:
     print(end='—')
@@ -61,7 +61,7 @@ while a2>0:
 print("")
 
 
-# In[ ]:
+# In[2]:
 
 
 #输入区域
@@ -79,6 +79,8 @@ while int(minimun)>20:#判断是否小于20位
     minimun=input()
 print("")
 
+#建立列表存储已经生成的密码方便查询
+keys=['12345678','12345679','1234567890']
 
 #输入最大位数
 print("Maximum number of digits:")
@@ -209,8 +211,16 @@ while x==0:
             nx+=str(rouxiao())
         if n1==3:
             nx+=str(rouda()) 
-    print(nx)
-    f = open('wordlist-probable.txt', 'a')
-    f.write(nx)
-    f.write('\n')
+    if nx not in keys:
+        keys.append(nx)
+        print(nx)
+        f = open('wordlist-probable.txt', 'a')
+        f.write(nx)
+        f.write('\n')
+
+
+# In[ ]:
+
+
+
 
